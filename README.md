@@ -1,2 +1,2 @@
-# algorithm_py
+# algorithms_py
 Алгоритмы и структуры данных на Python. Базовый курс
