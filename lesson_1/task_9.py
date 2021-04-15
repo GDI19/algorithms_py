@@ -1,3 +1,5 @@
+# ссылка на схему https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=lesson1#Uhttps%3A%2F%2Fraw.githubusercontent.com%2FGDI19%2Falgorithms_py%2Fmain%2Flesson1
+
 print('Введите три числа')
 a = int(input('первое число a: '))
 b = int(input('первое число b: '))
