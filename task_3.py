@@ -4,4 +4,4 @@ result = ''
 
 for d in num:
     result = d + result
-print('Число в обратном порядке', result)
+print('Число в обратном порядке:', result)
