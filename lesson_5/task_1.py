@@ -25,10 +25,8 @@ count = int(input('Сколько компаний: '))
 
 total_avrg = 0
 co_dict = {}
-profit_comp = ['name']
-biggest_prof_avr = float('-inf')
-loss_comp = ['Нет']
-loss_avrg = float('inf')
+profit_comp = []
+loss_comp = []
 
 for i in range(1, count+1):
     comp_name = input('Название: ')
@@ -39,19 +37,16 @@ for i in range(1, count+1):
     profit_avrg = (profit_1 + profit_2 + profit_3 + profit_4)/4
     total_avrg += profit_avrg
 
-    co_dict[i] = [comp_name, profit_1, profit_2, profit_3, profit_4, profit_avrg]
+    co_dict[comp_name] = [ profit_1, profit_2, profit_3, profit_4, profit_avrg]
+    print()
 
-    if profit_avrg > biggest_prof_avr:
-        profit_comp[0] = co_dict[i][0]
-        biggest_prof_avr = profit_avrg
-    if count > 1:
-        if profit_avrg < loss_avrg:
-            loss_comp[0] = co_dict[i][0]
-            loss_avrg = profit_avrg
-    print(profit_comp, loss_comp)
+avrg = total_avrg / count
+for k in co_dict.keys():
+    if co_dict[k][4] > avrg:
+        profit_comp.append(k)
+    else:
+        loss_comp.append(k)
 
-# avrg = total_avrg / count
-print(f'Средняя прибыль от компаний: {total_avrg}')
-
-print(f'Самая прибыльная компания: {profit_comp[0]}')
-print(f'Самая убыточная компания: {loss_comp[0]}')
+print(f'Средняя прибыль компаний: {avrg}')
+print('Компании с прибылью выше средней:', ', '.join(profit_comp))
+print(f'Компании с прибылью ниже средней:', ', '.join(loss_comp))
