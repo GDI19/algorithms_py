@@ -32,13 +32,16 @@ def ascii_print_1(start, end, step):
         memory_size += size_res + start + end + step
         memory_list.append(memory_size)
 
-    return(memory_list)
+    return memory_list
+
 
 # print(ascii_print_1(start, end, step))
 """
 За время работы функци используется 1451 bytes,
 но т.к. строка перезаписывается то получается максимальный объем
 используется 388 байт Python 3.8.3 windows 10 (64x)"""
+
+
 # ---------------------------------------------------------------------
 
 def ascii_print_2(start, end, step):
@@ -68,7 +71,8 @@ def ascii_print_2(start, end, step):
         memory_size = memory_size + start + end + step
         memory_list.append(memory_size)
 
-    return (memory_list)
+    return memory_list
+
 
 # print(ascii_print_2(start, end, step))
 """
@@ -79,15 +83,18 @@ def ascii_print_2(start, end, step):
 # ----------------------------------------------------------------------
 
 list_ascii = [chr(i) for i in range(0, 128)]
+
+
 def ascii_print_3(start, end, step):
     count = 1
-    for i in range(start, end+1):
+    for i in range(start, end + 1):
         print(f'{i}  {list_ascii[i]}', end=' | ')
         if count % step != 0:
             count += 1
         else:
             print()
             count += 1
+
 
 ascii_print_3(start, end, step)
 
@@ -113,4 +120,3 @@ print(t_size)
 Кроме этого в выше приведенных функциях не учитывался 
 цикл for i in range(32,127) займет 2660 байт = (28b * 95)
 """
-
