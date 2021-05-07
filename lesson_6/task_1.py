@@ -96,7 +96,16 @@ def ascii_print_3(start, end, step):
             count += 1
 
 
-ascii_print_3(start, end, step)
+# ascii_print_3(start, end, step)
+
+"""
+созданный список ASCII занимает 7640 bytes, Python 3.8.3 windows 10 (64x)
+функция лишь обращается к этим значениям
+
+Кроме этого в выше приведенных функциях не учитывался 
+цикл for i in range(32,128) займет 2660 байт = (28b * 95)
+"""
+# -----------------------------------------------------
 
 """
 print(sys.getsizeof(list_ascii))
@@ -113,10 +122,13 @@ for i in range(127):
     print(i, size )
     t_size += size
 print(t_size)
-
-созданный список ASCII занимает 7640 bytes, Python 3.8.3 windows 10 (64x)
-функция лишь обращается к этим значениям
-
-Кроме этого в выше приведенных функциях не учитывался 
-цикл for i in range(32,128) займет 2660 байт = (28b * 95)
+# ---------------------------------------------------------
+ascii_dict = dict()
+ascii_in_number = range(0,128)
+total_s = 0
+for i in ascii_in_number:
+    ascii_dict[str(i)] = chr(i)
+    total_s += sys.getsizeof(str(i)) + sys.getsizeof(chr(i))
+print(sys.getsizeof(ascii_dict))    # 4696 bytes
+print(total_s)                      # 12946 bytes
 """
