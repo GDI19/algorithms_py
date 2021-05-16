@@ -19,7 +19,7 @@ def rabin_karp(s):
     h_list = []
     count = 0
     for item in len_sub:
-        h_subs = hashlib.sha1(s[:item].encode('utf-8')).hexdigest()
+        # h_subs = hashlib.sha1(s[:item].encode('utf-8')).hexdigest()
         for i in range(len(s)):
             h_str = hashlib.sha1(s[i:i + item].encode('utf-8')).hexdigest()
             if h_str not in h_list:
